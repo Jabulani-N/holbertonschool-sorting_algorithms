@@ -1,11 +1,11 @@
 /**
- * check-array - checks if the entire array is in order
+ * check_array - checks if the entire array is in order
  * @array: the array in question
  * Return: -1 if it is in order.
  * index of flaw [x] otherwise.
  */
 
-int check-array(int *`:array)
+int check_array(int *`:array)
 {
 	int x;
 
