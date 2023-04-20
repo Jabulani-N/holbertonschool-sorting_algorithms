@@ -8,7 +8,7 @@
 
 <br>
 
-O(n ^^^2)
+O(n^2)
 
 Bubble Sort goes through the list item by item, and switching the current pair if they are out of order.
 
