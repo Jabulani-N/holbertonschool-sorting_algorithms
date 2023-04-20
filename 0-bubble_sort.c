@@ -8,9 +8,10 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	int thing1, thing2;
+	int thing1, thing2, problemChild;
 
-	while (check-array(array) == 0)
+	problemChild = check-array(array);
+	while (problemChild => 0)
 	{ /*while array is out of order*/
 		
 	}
