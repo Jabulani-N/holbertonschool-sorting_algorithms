@@ -5,7 +5,7 @@
  * index of flaw [x] otherwise.
  */
 
-int check_array(int *`:array)
+int check_array(int *array)
 {
 	int x;
 
