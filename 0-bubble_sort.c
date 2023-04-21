@@ -14,6 +14,8 @@ void bubble_sort(int *array, size_t size)
 {
 	int bigger, smaller, problemChild;
 
+	if (size < 2)/*don't play if size is bad*/
+		return;
 	problemChild = check_array(array, size);
 	/*initial array check so loop is only entered if needed*/
 
