@@ -3,7 +3,7 @@
  * if array[x]>array[x+1,], swap their values
  */
 
-#include "header.h"
+#include "sort.h"
 #include "check_array.c"
 
 void bubble_sort(int *array, size_t size)

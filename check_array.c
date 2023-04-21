@@ -5,6 +5,8 @@
  * index of flaw [x] otherwise.
  */
 
+#include "sort.h"
+
 int check_array(int *array)
 {
 	int x;
