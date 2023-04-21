@@ -1,6 +1,6 @@
 
-#ifndef content_H
-#define content_H
+#ifndef SORT_H
+#define SORT_H
 
 #include <stdlib.h>
 

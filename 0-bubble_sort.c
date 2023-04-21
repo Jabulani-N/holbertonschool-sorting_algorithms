@@ -1,6 +1,10 @@
 /**
  * bubble_sort - bubble sorts an array
  * if array[x]>array[x+1,], swap their values
+ * @array: the array in question
+ * @size: size of araay
+ *
+ * Return: nada
  */
 
 #include "sort.h"
@@ -29,3 +33,4 @@ void bubble_sort(int *array, size_t size)
 	}
 
 }
+
