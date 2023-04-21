@@ -30,7 +30,7 @@ void bubble_sort(int *array, size_t size)
 		problemChild = check_array(array, size);
 		/*check next spot*/
 		print_array(array, size);
-		printf("probelm child was index %i\n", problemChild);
+/*		printf("probelm child was index %i\n", problemChild);*/
 	}
 
 }
