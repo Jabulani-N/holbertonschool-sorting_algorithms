@@ -19,8 +19,8 @@ void bubble_sort(int *array, size_t size)
 	problemChild = check_array(array, size);
 	/*initial array check so loop is only entered if needed*/
 
-	if (problemChild == -1)/*applies if it started right.*/
-		print_array(array, size);/*becuase we spawned in done*/
+/*	if (problemChild == -1)*//*applies if it started right.*/
+/*		print_array(array, size);*//*becuase we spawned in done*/
 	while (problemChild >= 0)
 	{ /*while array is out of order*/
 		bigger = array[problemChild];
