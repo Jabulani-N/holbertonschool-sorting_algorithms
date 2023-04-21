@@ -29,10 +29,9 @@ void bubble_sort(int *array, size_t size)
 		array[problemChild] = smaller;
 		array[problemChild + 1] = bigger;
 		/*values fixed*/
+		print_array(array, size);/*print newly refurbished array*/
 		problemChild = check_array(array, size);
 		/*check next spot*/
-		print_array(array, size);
-/*		printf("probelm child was index %i\n", problemChild);*/
 	}
 
 }
