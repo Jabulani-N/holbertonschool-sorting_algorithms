@@ -26,3 +26,22 @@ the function we create wants to
 
 	* if there were no changes: end function.
 
+
+# Task 1: Insertion Sort
+
+<p align="center">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif" width="400\"/>
+
+<br>
+
+O(n^2)
+
+Insertion sort is extremely similar to bubble sort.
+
+The difference is, instead of the "bubble" continuing on to the end of the array, insertion repeatedly moves the same item until it is in position.
+
+practically, this just means that each step for sorting, in my code, will start from the beginning of the sequence, and move the first disorder it encounters. repeat.
+
+
+
