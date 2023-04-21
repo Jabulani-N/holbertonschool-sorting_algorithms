@@ -12,12 +12,12 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	int bigger, smaller, problemChild;
+	int bigger, smaller, problemChild, onee = 0;
 
 	if (size < 2)/*don't play if size is bad*/
 		return;
 
-	problemChild = check_array(array, size);
+	problemChild = check_array(array, size, onee);
 	/*initial array check so loop is only entered if needed*/
 
 	while (problemChild >= 0)
@@ -29,7 +29,8 @@ void bubble_sort(int *array, size_t size)
 		array[problemChild + 1] = bigger;
 		/*values fixed*/
 		print_array(array, size);/*print newly refurbished array*/
-		problemChild = check_array(array, size);
+		onee = problemChild;/*onee is the previous child*/
+		problemChild = check_array(array, size, onee);
 		/*check next spot*/
 	}
 
