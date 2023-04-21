@@ -12,6 +12,27 @@
  * needed because the requested function is single steps at a time
  */
 
+int check_list (listint_t **list)
+{
+	int prevN, index;
+	listint_t *holder;
+
+	holder = *list /*holder = address of current node*/
+	while (*holder)
+	{
+		prevN = holder->n;
+		holder++;
+		index++;
+		if (*holder)
+		{ /*if there actualy was a next spot*/
+			if (prevN > holder->n) /*if out of order*/
+				return (index);
+		}
+	} /*if you make it out of the loop, there were no problems*/
+
+	return (-1);
+}
+
 /*
  * 1, if im not moving the tail, join my own previous and next
  * 2, find destination
