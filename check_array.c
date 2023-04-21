@@ -11,10 +11,10 @@ int check_array(int *array, int size)
 {
 	int x;
 
-	for(x = 0; x + 1 < size; x++)
+	for (x = 0; x + 1 < size; x++)
 	{ /*as long as there is a next to compare to*/
 		if (array[x] > array[x + 1])/*there are items out of order*/
-			return(x);/*fail one fails all. return immediately*/
+			return (x);/*fail one fails all. return immediately*/
 	}
 	return (-1);/*got through with no violations*/
 }
