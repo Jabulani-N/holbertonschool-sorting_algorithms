@@ -14,16 +14,17 @@
 
 int check_list (listint_t **list)
 {
-	int prevN, index;
+	int prevN, index = 0;
 	listint_t *holder;
 
-	holder = *list /*holder = address of current node*/
-	while (*holder)
+	holder = *list; /*holder = address of current node*/
+	while (holder)
 	{
+/*		printf("check_list is looking at index %i\n", index);*/
 		prevN = holder->n;
 		holder++;
 		index++;
-		if (*holder)
+		if (holder)
 		{ /*if there actualy was a next spot*/
 			if (prevN > holder->n) /*if out of order*/
 				return (index);
@@ -48,7 +49,7 @@ int check_list (listint_t **list)
  * Return: the address of moved node.
  */
 
-listint_t move_node(listint_t *node, int dest)
+listint_t *move_node(listint_t *node, int dest)
 {
 	listint_t *holder;
 	int i = 0;

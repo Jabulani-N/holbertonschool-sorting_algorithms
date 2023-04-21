@@ -10,8 +10,11 @@
 #include "sort.h"
 #include "check_dbl_linked_list.c"
 
-void insertion_sort_list(listint_t **list);
+void insertion_sort_list(listint_t **list)
 {
+	int i;
 
+	i = check_list(list);
+	printf("check_list returned %i\n",i);
 }
 
