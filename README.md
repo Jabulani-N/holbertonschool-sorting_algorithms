@@ -10,7 +10,7 @@
 
 O(n^2)
 
-Bubble Sort goes through the list item by item, and switching the current pair if they are out of order.
+[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) goes through the list item by item, and switching the current pair if they are out of order.
 
 - This process is repeated as many times as necessary to order the list
 
@@ -37,7 +37,7 @@ the function we create wants to
 
 O(n^2)
 
-Insertion sort is extremely similar to bubble sort.
+[Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort) is extremely similar to bubble sort.
 
 The difference is, instead of the "bubble" continuing on to the end of the array, insertion repeatedly moves the same item until it is in position.
 
