@@ -14,7 +14,7 @@ void bubble_sort(int *array, size_t size)
 {
 	int bigger, smaller, problemChild;
 
-	problemChild = check_array(array);
+	problemChild = check_array(array, size);
 	/*initial array check so loop is only entered if needed*/
 
 	if (problemChild == -1)/*applies if it started right.*/
@@ -27,9 +27,10 @@ void bubble_sort(int *array, size_t size)
 		array[problemChild] = smaller;
 		array[problemChild + 1] = bigger;
 		/*values fixed*/
-		problemChild = check_array(array);
+		problemChild = check_array(array, size);
 		/*check next spot*/
 		print_array(array, size);
+		printf("probelm child was index %i\n", problemChild);
 	}
 
 }
