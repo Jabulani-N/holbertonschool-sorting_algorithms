@@ -21,13 +21,15 @@ int check_list (listint_t **list)
 	while (holder)
 	{
 /*		printf("check_list is looking at index %i\n", index);*/
-		prevN = holder->n;
-		holder++;
+		prevN = (holder->n);
+		holder = holder->next;
 		index++;
 		if (holder)
 		{ /*if there actualy was a next spot*/
 			if (prevN > holder->n) /*if out of order*/
+			{ printf("check_list: holder has %i\n previous was %i\n", holder->n, prevN);
 				return (index);
+			}
 		}
 	} /*if you make it out of the loop, there were no problems*/
 
@@ -62,38 +64,44 @@ listint_t *move_node(listint_t **list, int origin, int dest)
 
 	while (i < origin)
 	{
-		printf("node at index %i has content %i\n", i, (node->n));
-		printf("move_node is about to say node = node->next, while node is at index %i\n", i);
+//		printf("node at index %i has content %i\n", i, (node->n));
+//		printf("move_node is about to say node = node->next, while node is at index %i\n", i);
 		node = node->next;
 		i++;
-		printf("move_node just said node = node->next at index %i\n", i);
+//		printf("move_node just said node = node->next at index %i\n", i);
 	}/*node is the address of the problem node*/
-	printf("about ot try to join the nodes that surrounded the node in quetion\n");
+//	printf("about ot try to join the nodes that surrounded the node in quetion\n");
 	if (node->next)
 	{ /*if i'm not the tail*/
-		printf("node was not the tail\n");
+//		printf("node was not the tail\n");
+//		printf("holder has %i and is aboutto change\n", holder->n);
 		holder = node->prev;
+//		printf("holder just changed and now has %i\n", holder->n);
 		holder->next = node->next;
 		holder = node->next;
+//		printf("holder just changed again, and now holds %i\n", holder->n);
 		holder->prev = node->prev;
 	}/*1 joined the nodes that surrouned original node (not tail)*/
 	else
 	{/*if I am the tail*/
-		printf("node was the tail\n");
+//		printf("node was the tail\n");
 		holder = node->prev;
 		holder ->next = node->next;
 		/*do not try to edit a node after tail*/
 	}/*1 joined nodes taht surround original node (tail)*/
-	printf("joined nodes that surround original node\n");
+//	printf("joined nodes that surround original node\n");
 	holder = node;/*holds the address of a node in list*/
 	while (holder->prev)/*while there is a node before*/
-		holder = holder->prev;/*hold address of previous node*/
+		holder = holder->prev/*, printf("moved holder to it's previous\n")*/;/*hold address of previous node*/
 	/*holder has address of head of list*/
+//	printf("holder is now head\n");
+	i = 0;
 	while (i < dest)
-	{
+	{ //printf("holder is at index %i\n", i);
 		holder = holder->next;
 		i++;
 	} /*2 holder has address of node that was originaly at destination*/
+//	printf("holder is at dest\n");
 	node->prev = holder->prev;
 	node->next = holder;
 	/*3 my own next/prev are updated*/

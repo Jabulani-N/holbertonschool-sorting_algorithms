@@ -19,8 +19,9 @@ void insertion_sort_list(listint_t **list)
 	while (i >= 0)
 	{
 		i = check_list(list);/*i = index of problem*/
-/*		printf("check_list returned %i\n", i);*/
+		printf("check_list returned %i\n", i);
 		move_node(list, i, i - 1);/*move problem 1 to the left*/
+		print_list(*list);
 	}
 
 }
