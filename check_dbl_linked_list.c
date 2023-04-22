@@ -114,7 +114,7 @@ listint_t *move_node(listint_t **list, int origin, int dest)
 		holder->next = node;
 	}
 	else//we changed who is head
-		list = &node;
+		*list = node;
 	/*4, 5 the surrounging  nodes are updated*/
 	return (node);
 	
