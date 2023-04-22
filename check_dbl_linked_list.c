@@ -27,7 +27,7 @@ int check_list (listint_t **list)
 		if (holder)
 		{ /*if there actualy was a next spot*/
 			if (prevN > holder->n) /*if out of order*/
-			{ printf("check_list: holder has %i\n previous was %i\n", holder->n, prevN);
+			{ printf("check_list:\nindex %i has %i\nindex  %i has %i\n", index, holder->n, index - 1, prevN);
 				return (index);
 			}
 		}
@@ -72,25 +72,26 @@ listint_t *move_node(listint_t **list, int origin, int dest)
 	}/*node is the address of the problem node*/
 //	printf("about ot try to join the nodes that surrounded the node in quetion\n");
 	if (node->next)
-	{ /*if i'm not the tail*/
-//		printf("node was not the tail\n");
-//		printf("holder has %i and is aboutto change\n", holder->n);
+	{ /*if node is not the tail*/
+		printf("node was not the tail or head\n");
+		printf("holder has %i and is aboutto change\n", holder->n);
 		holder = node->prev;
-//		printf("holder just changed and now has %i\n", holder->n);
+		printf("holder just changed and now has %i\n", holder->n);
 		holder->next = node->next;
 		holder = node->next;
-//		printf("holder just changed again, and now holds %i\n", holder->n);
-		holder->prev = node->prev;
+		printf("holder just changed again, and now holds %i\n", holder->n);
+		if (holder->prev)/*we are not replacing head*/
+			holder->prev = node->prev;
 	}/*1 joined the nodes that surrouned original node (not tail)*/
 	else
-	{/*if I am the tail*/
+	{/*if node is tail*/
 //		printf("node was the tail\n");
 		holder = node->prev;
 		holder ->next = node->next;
 		/*do not try to edit a node after tail*/
-	}/*1 joined nodes taht surround original node (tail)*/
+	}/*1 joined nodes surrounding original node (tail)*/
 //	printf("joined nodes that surround original node\n");
-	holder = node;/*holds the address of a node in list*/
+	holder = node;
 	while (holder->prev)/*while there is a node before*/
 		holder = holder->prev/*, printf("moved holder to it's previous\n")*/;/*hold address of previous node*/
 	/*holder has address of head of list*/
@@ -106,8 +107,12 @@ listint_t *move_node(listint_t **list, int origin, int dest)
 	node->next = holder;
 	/*3 my own next/prev are updated*/
 	holder->prev = node;
-	holder = node->prev;
-	holder->next = node;
+	if (node->prev)
+	{ //if there is a node before newly moved node.
+	// as in: if we did not just assign node as head
+		holder = node->prev;
+		holder->next = node;
+	}
 	/*4, 5 the surrounging  nodes are updated*/
 	return(node);
 	
