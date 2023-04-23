@@ -54,7 +54,7 @@ practically, this just means that each step for sorting, in my code, will start 
 
 O(n^2)
 
-Selectin Sort begins a loop:
+[Selectin Sort](https://en.wikipedia.org/wiki/Selection_sort) begins a loop:
 
 1. record starting point of
 
