@@ -1,5 +1,5 @@
 /**
- * bubble_sort - bubble sorts an array
+ * insertion_sort_list - insertion sorts an array
  * if array[x]>array[x+1,], swap their values
  * @array: the array in question
  * @size: size of araay
