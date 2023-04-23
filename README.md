@@ -44,4 +44,36 @@ The difference is, instead of the "bubble" continuing on to the end of the array
 practically, this just means that each step for sorting, in my code, will start from the beginning of the sequence, and move the first disorder it encounters. repeat.
 
 
+# Task 2: Selection Sort
 
+<p align="left">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" width="400\"/>
+
+<br>
+
+O(n^2)
+
+Selectin Sort begins a loop:
+
+1. record starting point of
+
+	* iteration 1: 0
+
+	* iteration 2+: previous starting point + 1
+
+1. travel through the entire list
+
+	* mark lowest number encountered this loop
+
+1. reach end of list
+
+1. swap marked lowest number encountered this loop with the content of starting point
+
+This may be approached by a swap function, that recieves an array of ints
+
+1. records the contents of the indices to swap
+
+1. places the contents into the requested indices
+
+1. returns the editied array
