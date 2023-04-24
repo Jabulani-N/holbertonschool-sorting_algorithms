@@ -25,8 +25,8 @@ void selection_sort(int *array, size_t size)
 		}
 
 		/*in this section, swap the contents of startHere and lowest*/
-		if (changesMade != 0 && lowest != 0)
-		{ /*Only fix if broken. don't let it distract you*/
+		if (changesMade != 0 && lowest > 0)
+		{ /*Only fix if broken.*/
 			seija_k_array(array, startHere, lowest);
 			/*swapped array[startHere] and array[lowest]*/
 			print_array(array, size);
