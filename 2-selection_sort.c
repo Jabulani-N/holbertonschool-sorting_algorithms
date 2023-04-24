@@ -25,15 +25,17 @@ void selection_sort(int *array, size_t size)
 		}
 
 		/*in this section, swap the contents of startHere and lowest*/
-		if (changesMade != 0)
+		if (changesMade != 0 && lowest != 0)
 		{ /*Only fix if broken. don't let it distract you*/
 			seija_k_array(array, startHere, lowest);
 			/*swapped array[startHere] and array[lowest]*/
 			print_array(array, size);
 		}
-		lowest = ++startHere;/*go through array starting at next slot next time*/
-			/*`++startHere` increases startHere BEFORE it does the line's code*/
-		i = 0, changesMade = 0; /*set 0 for next loop of going through array*/
+		startHere = startHere + 1;
+		lowest = startHere;
+			/*go through array starting at next slot next time*/
+		i = 0;
+		changesMade = 0; /*set 0 for next loop of going through array*/
 	}
 }
 /**
