@@ -31,5 +31,7 @@ void print_list(const listint_t *list);
 void insertion_sort_list(listint_t **list);
 int check_list(listint_t **list);
 listint_t *move_node(listint_t **list, int origin, int dest);
+void seija_k_array(int *array, int a, int b);
+void selection_sort(int *array, size_t size);
 
 #endif
