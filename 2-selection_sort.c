@@ -1,3 +1,5 @@
+#include "sort.h"
+#include "check_array.c"
 
 /**
  * selection_sort - puts the smallest unsorted value after the sorted values
@@ -10,7 +12,7 @@ void selection_sort(int *array, size_t size)
 {
 	int startHere = 0, lowest = INT_MAX, i = 0;
 
-	while(check_whole_array(array) != (-1))
+	while(check_whole_array(array, size) != (-1))
 	{ /*while array is out of order*/
 		while(array[startHere + i])
 		{ /*go through the array*/
