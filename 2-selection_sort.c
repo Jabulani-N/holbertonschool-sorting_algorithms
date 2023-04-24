@@ -12,9 +12,9 @@ void selection_sort(int *array, size_t size)
 {
 	int startHere = 0, lowest = 0, i = 0;
 
-	while(check_whole_array(array, size) != (-1))
+	while (check_whole_array(array, size) != (-1))
 	{ /*while array is out of order*/
-		while(array[startHere + i])
+		while (array[startHere + i])
 		{ /*go through the array*/
 			if (array[startHere + i] < array[lowest])
 				lowest = (startHere + i);/*lowest = index of current lowest item*/
@@ -26,7 +26,6 @@ void selection_sort(int *array, size_t size)
 		{ /*failsafe conditional: only fix if broken. don't let it distract you*/
 			seija_k_array(array, startHere, lowest);
 			/*swapped array[startHere] and array[lowest]*/
-			//print
 			print_array(array, size);
 		}
 		lowest = ++startHere;/*go through array starting at next slot next time*/
@@ -50,6 +49,6 @@ void seija_k_array(int *array, int a, int b)
 	/*recorded contents*/
 	array[a] = oldB;
 	array[b] = oldA;
-	/*replaced the contents*/	
+	/*replaced the contents*/
 }
 
