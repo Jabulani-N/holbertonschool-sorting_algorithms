@@ -10,26 +10,27 @@
 
 void selection_sort(int *array, size_t size)
 {
-	int startHere = 0, lowest = INT_MAX, i = 0;
+	int startHere = 0, lowest = 0, i = 0;
 
 	while(check_whole_array(array, size) != (-1))
 	{ /*while array is out of order*/
 		while(array[startHere + i])
 		{ /*go through the array*/
-			if (array[startHere + i] < lowest)
+			if (array[startHere + i] < array[lowest])
 				lowest = (startHere + i);/*lowest = index of current lowest item*/
 			i++;
 		}
 
 		/*in this section, swap the contents of startHere and lowest*/
-		if (lowest != INT_MAX)
+		if (lowest != 0)
 		{ /*failsafe conditional: only fix if broken. don't let it distract you*/
 			seija_k_array(array, startHere, lowest);
 			/*swapped array[startHere] and array[lowest]*/
 			//print
 			print_array(array, size);
 		}
-		startHere++;/*go through array starting at next slot next time*/
+		lowest = ++startHere;/*go through array starting at next slot next time*/
+			/*`++startHere` increases startHere BEFORE it does the line's code*/
 		i = 0; /*reset i to 0 for next loop of going through array*/
 	}
 }
